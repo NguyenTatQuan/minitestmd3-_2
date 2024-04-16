@@ -115,10 +115,34 @@ VALUES (1,10,1,90),
        (14,14,4,57),
        (15,15,5,67);
 
-SELECT * FROM student WHERE fullname LIKE '%Nguyen%';
-SELECT * FROM student WHERE fullname LIKE '%Anh';
-SELECT * FROM student WHERE age > 18 AND age < 25;
-SELECT * FROM student WHERE id =12  or id = 13;
+select S.*, C.name as class_name, A.address
+from Student S
+         join class C on S.class_id = C.id
+         join Address A on S.address_id = A.id
+where S.fullname LIKE 'Nguyen%';
+
+
+select S.*, C.name as class_name, A.address
+from Student S
+         join class C on S.class_id = C.id
+         join Address A on S.address_id = A.id
+where S.fullname LIKE '% Anh';
+
+
+select S.*, C.name as class_name, A.address
+from Student S
+         join class C on S.class_id = C.id
+         join Address A on S.address_id = A.id
+
+WHERE age > 18 AND age < 25;
+
+
+select S.*, C.name AS class_name, A.address
+from Student S
+         join class C on S.class_id = C.id
+         join Address A on S.address_id = A.id
+where S.id = 12 or S.id = 13;
+
 
 
 
@@ -130,6 +154,7 @@ SELECT a.address, COUNT(*) AS total_students
 FROM student s
          JOIN address a ON s.address_id = a.id
 GROUP BY a.address;
+
 
 select avg(point) as AVGScore from point;
 
