@@ -120,6 +120,8 @@ SELECT * FROM student WHERE fullname LIKE '%Anh';
 SELECT * FROM student WHERE age > 18 AND age < 25;
 SELECT * FROM student WHERE id =12  or id = 13;
 
+
+
 SELECT class_id, COUNT(*) AS total_students
 FROM student
 GROUP BY class_id;
@@ -129,13 +131,13 @@ FROM student s
          JOIN address a ON s.address_id = a.id
 GROUP BY a.address;
 
-select avg(point) as HightScore from point;
+select avg(point) as AVGScore from point;
 
-select max(point) as HightScore from point;
+select max(point) as MaxScore from point;
 
-select min(point) as HightScore from point;
+select min(point) as LowScore from point;
 
-select *,ucase(fullname) as HightScore from student;
+select *,ucase(fullname) as UScore from student;
 
 
 
